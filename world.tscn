@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://duemjd0qhekrw"]
+[gd_scene load_steps=4 format=3 uid="uid://duemjd0qhekrw"]
 
 [ext_resource type="Texture2D" uid="uid://bwmny50vdxvr1" path="res://assets/wallpaperCabin.jpg" id="1_85gfb"]
 [ext_resource type="PackedScene" uid="uid://bls5ua8w0wuqc" path="res://player.tscn" id="2_n2tum"]
+[ext_resource type="PackedScene" uid="uid://bb4rojrglg3b5" path="res://enemy.tscn" id="3_xy06p"]
 
 [node name="World" type="Node2D"]
 position = Vector2(-10, 4)
@@ -14,4 +15,5 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource("2_n2tum")]
 position = Vector2(232, 353)
-speed = 400
+
+[node name="Enemy" parent="." instance=ExtResource("3_xy06p")]

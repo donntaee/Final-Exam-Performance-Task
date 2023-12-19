@@ -1,14 +1,15 @@
 extends Area2D
 
 @export var speed = 400
-
+@onready enemy_hit()
+@onready bg_music()
 
 func _process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_left"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_right"):
 		velocity.x -= 1
+	if Input.is_action_pressed("move_right"):
+		velocity.x += 1
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 	if Input.is_action_pressed("move_down"):
@@ -18,3 +19,11 @@ func _process(delta):
 		velocity = velocity.normalized() * speed
 	
 	position += velocity * delta
+	
+	
+
+
+func _on_body_entered(body):
+	hide()
+	
+	
